@@ -1,0 +1,14 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://teacher-dashboard.vercel.app/sitemap.xml
+
+# Disallow admin areas (if any)
+Disallow: /admin/
+Disallow: /api/
+
+# Allow all other content
+Allow: /static/
+Allow: /icons/
+Allow: /manifest.json
