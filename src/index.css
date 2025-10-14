@@ -1,0 +1,181 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-family: 'Cairo', 'Tajawal', system-ui, sans-serif;
+    -webkit-text-size-adjust: 100%;
+    -webkit-tap-highlight-color: transparent;
+  }
+  
+  body {
+    @apply bg-white text-gray-900;
+    direction: rtl;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+  }
+  
+  /* تحسين التجاوب للهواتف */
+  @media (max-width: 768px) {
+    body {
+      font-size: 14px;
+      padding-bottom: 80px; /* مساحة للتنقل السفلي */
+    }
+    
+    /* تحسين الأزرار للجوال */
+    .btn-primary, .btn-secondary, .btn-danger, .btn-success {
+      @apply py-3 px-4 text-sm;
+      min-height: 44px; /* الحد الأدنى للمساحة القابلة للنقر */
+      touch-action: manipulation; /* تحسين الاستجابة للمس */
+    }
+    
+    /* تحسين البطاقات للجوال */
+    .card {
+      @apply p-4;
+      margin-bottom: 1rem;
+    }
+    
+    /* تحسين الحقول للجوال */
+    .input-field {
+      @apply py-3 px-3 text-base; /* منع التكبير في iOS */
+      min-height: 44px;
+    }
+    
+    /* تحسين الجداول للجوال */
+    .table-responsive {
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+    }
+    
+    /* تحسين النوافذ المنبثقة للجوال */
+    .modal {
+      margin: 1rem;
+      max-height: calc(100vh - 2rem);
+    }
+    
+    /* تحسين النصوص للجوال */
+    h1, h2, h3 {
+      line-height: 1.3;
+    }
+    
+    /* تحسين المسافات للجوال */
+    .space-y-6 > * + * {
+      margin-top: 1rem;
+    }
+  }
+  
+  /* تحسين للتابلت */
+  @media (min-width: 769px) and (max-width: 1024px) {
+    .card {
+      @apply p-5;
+    }
+    
+    .btn-primary, .btn-secondary, .btn-danger, .btn-success {
+      @apply py-2 px-5;
+    }
+  }
+  
+  /* تحسين للأجهزة الكبيرة */
+  @media (min-width: 1025px) {
+    .card {
+      @apply p-6;
+    }
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-gray-900 hover:bg-black text-white font-medium py-3 px-6 rounded-lg transition-all duration-200 shadow-sm hover:shadow-md;
+  }
+  
+  .btn-secondary {
+    @apply bg-gray-100 hover:bg-gray-200 text-gray-800 font-medium py-3 px-6 rounded-lg transition-all duration-200 border border-gray-300;
+  }
+  
+  .btn-danger {
+    @apply bg-red-600 hover:bg-red-700 text-white font-medium py-3 px-6 rounded-lg transition-all duration-200 shadow-sm hover:shadow-md;
+  }
+  
+  .btn-success {
+    @apply bg-green-600 hover:bg-green-700 text-white font-medium py-3 px-6 rounded-lg transition-all duration-200 shadow-sm hover:shadow-md;
+  }
+  
+  .card {
+    @apply bg-white rounded-xl shadow-sm border border-gray-200 p-6 hover:shadow-md transition-shadow duration-200;
+  }
+  
+  .input-field {
+    @apply w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-500 focus:border-transparent transition-all duration-200;
+  }
+  
+  .status-paid {
+    @apply bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium;
+  }
+  
+  .status-partial {
+    @apply bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-sm font-medium;
+  }
+  
+  .status-unpaid {
+    @apply bg-red-100 text-red-800 px-3 py-1 rounded-full text-sm font-medium;
+  }
+  
+  .nav-link {
+    @apply flex items-center px-4 py-3 text-sm font-medium transition-all duration-200 rounded-lg;
+  }
+  
+  .nav-link-active {
+    @apply bg-gray-100 text-gray-900 border-r-4 border-gray-900;
+  }
+  
+  .nav-link-inactive {
+    @apply text-gray-600 hover:bg-gray-50 hover:text-gray-900;
+  }
+  
+  /* تحسينات للهواتف */
+  @media (max-width: 768px) {
+    .btn-primary, .btn-secondary, .btn-danger, .btn-success {
+      @apply py-2 px-4 text-sm;
+    }
+    
+    .card {
+      @apply p-4;
+    }
+    
+    .input-field {
+      @apply py-2 px-3 text-sm;
+    }
+  }
+  
+  /* تحسينات للشاشات الصغيرة جداً */
+  @media (max-width: 480px) {
+    .btn-primary, .btn-secondary, .btn-danger, .btn-success {
+      @apply py-2 px-3 text-xs;
+    }
+    
+    .card {
+      @apply p-3;
+    }
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #a8a8a8;
+}
+
