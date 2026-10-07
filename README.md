@@ -10,7 +10,7 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/Va2lyR/BAMReveal/releases">
+  <a href="https://github.com/Va2lyR/test/releases/tag/v1.0">
     <img src="https://img.shields.io/badge/Download%20Now-1683FF?style=for-the-badge&logo=github&logoColor=white" alt="Download Now">
   </a>
 </p>
